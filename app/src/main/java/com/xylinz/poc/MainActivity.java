@@ -149,6 +149,11 @@ public class MainActivity extends AppCompatActivity {
         flag7Intent.setClassName("io.hextree.attacksurface", "io.hextree.attacksurface.activities.Flag7Activity");
         flag7Intent.setAction("OPEN");
 
+        Intent flag7Intent2 = new Intent();
+        flag7Intent2.setClassName("io.hextree.attacksurface", "io.hextree.attacksurface.activities.Flag7Activity");
+        flag7Intent2.setAction("REOPEN");
+        flag7Intent2.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP); // harus ada, untuk trigger onNewIntent
+
         flag7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -156,10 +161,6 @@ public class MainActivity extends AppCompatActivity {
                 new android.os.Handler(android.os.Looper.getMainLooper()).postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        Intent flag7Intent2 = new Intent();
-                        flag7Intent2.setClassName("io.hextree.attacksurface", "io.hextree.attacksurface.activities.Flag7Activity");
-                        flag7Intent2.setAction("REOPEN");
-                        flag7Intent2.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP); // harus ada untuk trigger onNewIntent
                         startActivity(flag7Intent2);
                     }
                 }, 1000);

@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PoC">
         <activity
+            android:name=".Hextree"
+            android:exported="false" />
+        <activity
             android:name=".ActivityResult"
             android:exported="false" />
         <activity
