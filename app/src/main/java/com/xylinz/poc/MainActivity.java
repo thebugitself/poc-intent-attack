@@ -1,6 +1,5 @@
 package com.xylinz.poc;
 
-import android.app.PendingIntent;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -167,15 +166,27 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // NEXT
-        Button next = findViewById(R.id.next_button);
+        // ActivityResult Flags - Flag 8 & 9
+        Button ArButton = findViewById(R.id.ar_button);
         Intent activityResult = new Intent(MainActivity.this, ActivityResult.class);
 
-        next.setOnClickListener(new View.OnClickListener() {
+        ArButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(activityResult);
             }
         });
+
+        // ImplicitIntent Flags - Flag 10,11,12
+        Button IiButton = findViewById(R.id.ii_button);
+        Intent ImplicitIntent = new Intent(MainActivity.this, ImplicitIntent.class);
+
+        IiButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(ImplicitIntent);
+            }
+        });
+
     }
 }

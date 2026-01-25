@@ -17,14 +17,14 @@ public class Hextree extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hextree);
 
-        // Kalo mo dapet flag 8 nyalain.
-//        Intent resultFlag8 = new Intent();
-//        resultFlag8.setClassName("io.hextree.attacksurface", "io.hextree.attacksurface.activities.Flag8Activity");
-//        startActivityForResult(resultFlag8, 1337);
+        Intent resultFlag8 = new Intent();
+        resultFlag8.setClassName("io.hextree.attacksurface", "io.hextree.attacksurface.activities.Flag8Activity");
 
         Intent resultFlag9 = new Intent();
         resultFlag9.setClassName("io.hextree.attacksurface", "io.hextree.attacksurface.activities.Flag9Activity");
+
         startActivityForResult(resultFlag9, 1337);
+        startActivityForResult(resultFlag8, 1337);
 
     }
 

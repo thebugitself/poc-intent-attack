@@ -23,26 +23,15 @@
         app:layout_constraintVertical_bias="0.129" />
 
     <Button
-        android:id="@+id/flag8_button"
+        android:id="@+id/flag89_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Flag 8"
+        android:text="Flag 8, 9"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.206" />
+        app:layout_constraintVertical_bias="0.203" />
 
-    <Button
-        android:id="@+id/flag9_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Flag 9"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.39"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.206" />
 </androidx.constraintlayout.widget.ConstraintLayout>

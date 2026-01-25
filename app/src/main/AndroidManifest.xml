@@ -12,22 +12,32 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PoC">
         <activity
+            android:name=".Flag10Receiver"
+            android:exported="false" />
+        <activity
+            android:name=".Flag11Receiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="io.hextree.attacksurface.ATTACK_ME" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ImplicitIntent"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="io.hextree.attacksurface.ATTACK_ME" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".Hextree"
             android:exported="false" />
         <activity
             android:name=".ActivityResult"
             android:exported="false" />
-        <activity
-            android:name=".SecretActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.SEND" />
-
-                <data android:mimeType="text/plain" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true">

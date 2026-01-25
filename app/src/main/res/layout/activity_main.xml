@@ -8,6 +8,16 @@
     android:background="#000000"
     tools:context=".MainActivity">
 
+    <Button
+        android:id="@+id/ii_button"
+        android:layout_width="225dp"
+        android:layout_height="53dp"
+        android:text="Implicit Intent Flags"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/string_flag"
         android:layout_width="wrap_content"
@@ -108,15 +118,14 @@
         app:layout_constraintVertical_bias="0.304" />
 
     <Button
-        android:id="@+id/next_button"
+        android:id="@+id/ar_button"
         android:layout_width="225dp"
         android:layout_height="53dp"
-        android:text="NEXT"
+        android:text="Activity Result Flags"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.434" />
+        app:layout_constraintVertical_bias="0.404" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

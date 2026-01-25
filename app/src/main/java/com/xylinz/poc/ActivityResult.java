@@ -18,26 +18,16 @@ public class ActivityResult extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
-        // Flag 8 - Receive Result, harus pake startActivityForResult() biar nilainya ga null & ngembaliin nama class nya
-        Button flag8 = findViewById(R.id.flag8_button);
-        Intent flag8Intent = new Intent(ActivityResult.this, Hextree.class);
+        // Flag 8 & 9 - Receive Result, harus pake startActivityForResult() biar nilainya ga null & ngembaliin nama class nya
+        Button flag8 = findViewById(R.id.flag89_button);
+        Intent flag89Intent = new Intent(ActivityResult.this, Hextree.class);
 
         flag8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(flag8Intent);
+                startActivity(flag89Intent);
             }
         });
 
-        // Flag 9 - Receive Result with Flag
-        Button flag9 = findViewById(R.id.flag9_button);
-        Intent flag9Intent = new Intent(ActivityResult.this, Hextree.class);
-
-        flag9.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(flag9Intent);
-            }
-        });
     }
 }
