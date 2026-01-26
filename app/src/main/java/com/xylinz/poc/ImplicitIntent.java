@@ -70,5 +70,19 @@ public class ImplicitIntent extends AppCompatActivity {
                 startActivity(atu);
             }
         });
+
+        // Flag 12
+        Button flag12 = findViewById(R.id.flag12_button);
+        Intent flag12Intent = new Intent();
+        flag12Intent.setClassName("io.hextree.attacksurface","io.hextree.attacksurface.activities.Flag12Activity");
+        flag12Intent.putExtra("LOGIN", true);
+
+        flag12.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(flag12Intent);
+            }
+        });
+
     }
 }

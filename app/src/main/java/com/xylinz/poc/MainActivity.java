@@ -188,5 +188,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // PendingIntentFlagHere Flags - Flag 22,23
+        Button PiButton = findViewById(R.id.pi_button);
+        Intent pendingIntent = new Intent(MainActivity.this, PendingIntentFlagHere.class);
+
+        PiButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(pendingIntent);
+            }
+        });
+
     }
 }
