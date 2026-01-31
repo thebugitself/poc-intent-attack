@@ -199,5 +199,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Deeplink Flags - Flag 13,14,15
+        Button dlButton = findViewById(R.id.dl_button);
+        Intent deepLinkIntent = new Intent(MainActivity.this, Deeplink.class);
+
+        dlButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(deepLinkIntent);
+            }
+        });
+
     }
 }

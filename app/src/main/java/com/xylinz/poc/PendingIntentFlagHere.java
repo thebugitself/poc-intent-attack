@@ -20,7 +20,7 @@ public class PendingIntentFlagHere extends AppCompatActivity {
         Intent flag22Intent = new Intent();
         flag22Intent.setClassName("io.hextree.attacksurface","io.hextree.attacksurface.activities.Flag22Activity");
 
-        Intent receive = new Intent(this, PendingIntentReceiver.class);
+        Intent receive = new Intent(this, PendingIntentReceiver.class); // arahin ke broadcast receiver kita sendiri
 
         PendingIntent pi = PendingIntent.getBroadcast(
                 PendingIntentFlagHere.this,
@@ -36,8 +36,5 @@ public class PendingIntentFlagHere extends AppCompatActivity {
                 startActivity(flag22Intent);
             }
         });
-
-        // Flag 23 -
-
     }
 }
